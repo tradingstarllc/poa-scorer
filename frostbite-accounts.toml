@@ -1,8 +1,10 @@
 [cluster]
+rpc_url = "https://api.devnet.solana.com"
 program_id = "FRsToriMLgDc1Ud53ngzHUZvCRoazCaGeGUuzkwoha7m"
+payer = "/home/clawd/.config/solana/id.json"
 
 [vm]
-seed = 1411784189811658702
+seed = 13770557880015489434
 account_model = "seeded"
 
 [[segments]]

@@ -1,0 +1,18 @@
+[cluster]
+program_id = "FRsToriMLgDc1Ud53ngzHUZvCRoazCaGeGUuzkwoha7m"
+
+[vm]
+seed = 1411784189811658702
+account_model = "seeded"
+
+[[segments]]
+index = 1
+slot = 1
+kind = "weights"
+writable = false
+
+[[segments]]
+index = 2
+slot = 2
+kind = "ram"
+writable = true

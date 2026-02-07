@@ -1,0 +1,71 @@
+[model]
+id = "poa-scorer-v1"
+version = "0.1.0"
+abi_version = "fb-abi-1"
+arch = "rv64imac"
+endianness = "little"
+vaddr_bits = 32
+profile = "finance-int"
+
+[abi]
+entry = 0x4000
+control_offset = 0x0000
+control_size = 64
+input_offset = 0x1000
+input_max = 4096
+output_offset = 0x2000
+output_max = 256
+scratch_min = 262144
+alignment = 8
+reserved_tail = 32
+
+[schema]
+type = "vector"
+
+[schema.vector]
+input_dtype = "i32"
+input_shape = [6]
+output_dtype = "i32"
+output_shape = [1]
+
+[validation]
+mode = "minimal"
+
+[build]
+has_bias = true
+stack_guard = 16384
+
+[weights]
+layout = "linear_i8_q16_v1"
+quantization = "q8"
+dtype = "i8"
+scale = "q16"
+header_format = "rvcd-v1"
+
+[weights.scales]
+w_scale_q16 = 10321
+
+[[weights.blobs]]
+name = "main"
+file = "weights.bin"
+hash = "sha256:e93d29aa82ca671843a7f16b43dc22ffd9af434a674ab20301c34403194b4c34"
+size_bytes = 10
+chunk_size = 9500000
+data_offset = 12
+segment_index = 1
+
+[[segments]]
+index = 0
+kind = "scratch"
+access = "rw"
+source = "scratch"
+
+[[segments]]
+index = 1
+kind = "weights"
+access = "ro"
+source = "weights:main"
+
+[limits]
+max_instructions = 1000000
+cu_budget = 1400000

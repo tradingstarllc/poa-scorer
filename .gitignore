@@ -1,0 +1,13 @@
+# Cauldron artifacts
+weights.bin
+weights_chunk*.bin
+chunks/
+guest/target/
+
+# Common weight formats
+weights.json
+*.npz
+*.npy
+*.pt
+*.pth
+*.safetensors

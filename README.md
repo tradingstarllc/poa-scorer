@@ -244,10 +244,13 @@ poa-scorer/
 
 | Repo | Description |
 |------|-------------|
-| [moltlaunch](https://github.com/tradingstarllc/moltlaunch) | Main project — identity, verification, trust |
+| [moltlaunch](https://github.com/tradingstarllc/moltlaunch) | Main project — 14 Anchor instructions, identity rotation, delegation, governance |
 | [moltlaunch-site](https://github.com/tradingstarllc/moltlaunch-site) | API server + website (90+ endpoints) |
-| [moltlaunch-sdk](https://github.com/tradingstarllc/moltlaunch-sdk) | npm SDK (v2.3.0) |
+| [moltlaunch-sdk](https://github.com/tradingstarllc/moltlaunch-sdk) | npm SDK (v2.4.0) |
 | [proof-of-agent](https://github.com/tradingstarllc/proof-of-agent) | Standalone verifier package |
+| [solana-agent-protocol](https://github.com/tradingstarllc/solana-agent-protocol) | SAP — application-layer standards for agent trust |
+
+> **Note:** The main Anchor program now includes 14 instructions spanning launchpad operations, SAP identity management (register, attest, bind DePIN, flag Sybil, update trust), and lifecycle features (identity rotation, delegation, revocation). The POA-Scorer feeds into the `attest_verification` instruction, with attestations governed by a [Squads multisig](https://explorer.solana.com/address/3gCjhVMKazL2VKQgqQ8vP93vLzPTos1e7XLm1jr7X9t5?cluster=devnet). See [GOVERNANCE.md](https://github.com/tradingstarllc/moltlaunch/blob/main/GOVERNANCE.md) for the decentralization roadmap.
 
 ---
 
